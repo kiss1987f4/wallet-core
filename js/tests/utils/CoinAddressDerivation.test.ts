@@ -51,6 +51,7 @@ describe('CoinAddressDerivation', () => {
             case CoinType.STELLAR: expect('GA3H6I4C5XUBYGVB66KXR27JV5KS3APSTKRUWOIXZ5MVWZKVTLXWKZ2P').to.equal(address); break;
             case CoinType.AION: expect('0xa0629f34c9ea4757ad0b275628d4d02e3db6c9009ba2ceeba76a5b55fb2ca42e').to.equal(address); break;
             case CoinType.NANO: expect('nano_39gsbcishxn3n7wd17ono4otq5wazwzusqgqigztx73wbrh5jwbdbshfnumc').to.equal(address); break;
+            case CoinType.NEBULAS: expect('n1ZVgEidtdseYv9ogmGz69Cz4mbqmHYSNqJ').to.equal(address); break;
             case CoinType.NEO: expect('AUa3rzbGJe7MbHf8Kra9em8oaLBL1MDYKF').to.equal(address); break;
             case CoinType.THETA: expect('0x0d1fa20c218Fec2f2C55d52aB267940485fa5DA4').to.equal(address); break;
             case CoinType.COSMOS: expect('cosmos142j9u5eaduzd7faumygud6ruhdwme98qsy2ekn').to.equal(address); break;
@@ -64,6 +65,10 @@ describe('CoinAddressDerivation', () => {
             case CoinType.NULS: expect('NsdtNvsfmPerWk4BhcapHTB3LptF8Sbe').to.equal(address); break;
             case CoinType.ZILLIQA: expect('zil1mk6pqphhkmaguhalq6n3cq0h38ltcehg0rfmv6').to.equal(address); break;
             case CoinType.SEMUX: expect('0xfe604170382452f77bc922bc19eb4b53504b09c2').to.equal(address); break;
+            case CoinType.WAVES: expect('3P63vkaHhyE9pPv9EfsjwGKqmZYcCRHys4n').to.equal(address); break;
+            case CoinType.AETERNITY: expect('ak_QDHJSfvHG9sDHBobaWt2TAGhuhipYjEqZEH34bWugpJfJc3GN').to.equal(address); break;
+            case CoinType.ARK: expect('Ac49m5pu5YpMMNgEbSYeZUEpRMHcSK3DfV').to.equal(address); break;
+            case CoinType.TERRA: expect('terra1rh402g98t7sly8trzqw5cyracntlep6qe3smug').to.equal(address); break;
         }
     };
 

@@ -53,6 +53,15 @@ class HDWalletTests: XCTestCase {
         XCTAssertEqual("bc1qumwjg8danv2vm29lp5swdux4r60ezptzz7ce85", address)
     }
 
+    func testDeriveDigiByte() {
+        let digibye = CoinType.digiByte
+        let wallet = HDWallet.test
+        let key = wallet.getKeyForCoin(coin: digibye)
+        let address = digibye.deriveAddress(privateKey: key)
+
+        XCTAssertEqual("dgb1q7qk2vvetgldgq0eeh3ytsky2380l9wuessmhe3", address)
+    }
+
     func testDeriveEthereum() {
         let ethereum = CoinType.ethereum
         let key = HDWallet.test.getKeyForCoin(coin: ethereum)
@@ -288,8 +297,8 @@ class HDWalletTests: XCTestCase {
         let xpub9 = HDWallet.derive(from: xpub, at: DerivationPath(purpose: .bip44, coinType: bitcoin, account: 0, change: 0, address: 9))!
 
 
-        let xpubAddr2 = BitcoinAddress(publicKey: xpub2, prefix: P2PKHPrefix.bitcoin.rawValue)!
-        let xpubAddr9 = BitcoinAddress(publicKey: xpub9, prefix: P2PKHPrefix.bitcoin.rawValue)!
+        let xpubAddr2 = BitcoinAddress(publicKey: xpub2, prefix: CoinType.bitcoin.p2pkhPrefix)!
+        let xpubAddr9 = BitcoinAddress(publicKey: xpub9, prefix: CoinType.bitcoin.p2pkhPrefix)!
 
         XCTAssertEqual(xpubAddr2.description,  "1MNF5RSaabFwcbtJirJwKnDytsXXEsVsNb")
         XCTAssertEqual(xpubAddr9.description, "1DUrqK4hj6vNNUTWXADpbqyjVWUYFD7xTZ")
@@ -302,8 +311,8 @@ class HDWalletTests: XCTestCase {
         let ypub3 = HDWallet.derive(from: ypub, at: DerivationPath(purpose: .bip49, coinType: bitcoin, account: 0, change: 0, address: 3))!
         let ypub10 = HDWallet.derive(from: ypub, at: DerivationPath(purpose: .bip49, coinType: bitcoin, account: 0, change: 0, address: 10))!
 
-        let ypubAddr3 = BitcoinAddress.compatibleAddress(publicKey: ypub3, prefix: P2SHPrefix.bitcoin.rawValue)
-        let ypubAddr10 = BitcoinAddress.compatibleAddress(publicKey: ypub10, prefix: P2SHPrefix.bitcoin.rawValue)
+        let ypubAddr3 = BitcoinAddress.compatibleAddress(publicKey: ypub3, prefix: CoinType.bitcoin.p2shPrefix)
+        let ypubAddr10 = BitcoinAddress.compatibleAddress(publicKey: ypub10, prefix: CoinType.bitcoin.p2shPrefix)
         XCTAssertEqual(ypubAddr3.description, "38CahkVftQneLonbWtfWxiiaT2fdnzsEAN")
         XCTAssertEqual(ypubAddr10.description, "38mWd5D48ShYPJMZngtmxPQVYhQR5DGgfF")
     }
@@ -328,5 +337,22 @@ class HDWalletTests: XCTestCase {
 
         XCTAssertEqual(pubkey.data.hexString, "039fdd3652495d01b6a363f8db8b3adce09f83ea5c43ff872ad0a39192340256b0")
         XCTAssertEqual(address.description, "bc1qearv5ezm3xfgy2t98denkzxwst4f35fvz608wa")
+    }
+
+    func testDeriveRavencoin() {
+        let ravencoin = CoinType.ravencoin
+        let wallet = HDWallet.test
+        let key = wallet.getKeyForCoin(coin: ravencoin)
+        let address = ravencoin.deriveAddress(privateKey: key)
+
+        XCTAssertEqual("RHQmrg7nNFnRUwg2mH7GafhRY3ZaF6FB2x", address)
+    }
+
+    func testDeriveTerra() {
+        let coin = CoinType.terra
+        let key = HDWallet.test.getKeyForCoin(coin: coin)
+        let address = CoinType.terra.deriveAddress(privateKey: key)
+
+        XCTAssertEqual(address, "terra1jf9aaj9myrzsnmpdr7twecnaftzmku2mhs2hfe")
     }
 }

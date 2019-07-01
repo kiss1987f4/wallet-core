@@ -3,6 +3,7 @@
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
+
 import XCTest
 import TrustWalletCore
 
@@ -11,10 +12,12 @@ class ZilliqaTests: XCTestCase {
 
     func testConfig() {
         XCTAssertEqual(coin.hrp, .zilliqa)
-        let address1 = coin.address(string: "0x7FCcaCf066a5F26Ee3AFfc2ED1FA9810Deaa632C")
-        let address2 = coin.address(string: "zil10lx2eurx5hexaca0lshdr75czr025cevqu83uz")
 
-        XCTAssertEqual(address1?.description, address2?.description)
+        let address1 = coin.address(string: "0x7FCcaCf066a5F26Ee3AFfc2ED1FA9810Deaa632C")
+        XCTAssertNil(address1)
+
+        let address2 = coin.address(string: "zil10lx2eurx5hexaca0lshdr75czr025cevqu83uz")
+        XCTAssertEqual("zil10lx2eurx5hexaca0lshdr75czr025cevqu83uz", address2?.description)
     }
 
     func testAddress() {
@@ -47,6 +50,6 @@ class ZilliqaTests: XCTestCase {
 
         let signature = ZilliqaSigner.sign(input: input).signature
 
-        XCTAssertEqual(signature.hexString, "001fa4df08c11a4a79e96e69399ee48eeecc78231a78b0355a8ca783c77c139436e37934fecc2252ed8dac00e235e22d18410461fb896685c4270642738ed268");
+        XCTAssertEqual(signature.hexString, "001fa4df08c11a4a79e96e69399ee48eeecc78231a78b0355a8ca783c77c139436e37934fecc2252ed8dac00e235e22d18410461fb896685c4270642738ed268")
     }
 }

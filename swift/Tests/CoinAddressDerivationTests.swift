@@ -43,6 +43,9 @@ class CoinAddressDerivationTests: XCTestCase {
                 case .dogecoin:
                     let expectedResult = "DJRFZNg8jkUtjcpo2zJd92FUAzwRjitw6f"
                     AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
+                case .digiByte:
+                    let expectedResult = "dgb1qtjgmerfqwdffyf8ghcrkgy52cghsqptynmyswu"
+                    AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
                 case .ellaism:
                     let expectedResult = "0x1Ae593CAdb8BAC47D0394617396650474c303F9C"
                     AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
@@ -109,6 +112,9 @@ class CoinAddressDerivationTests: XCTestCase {
                 case .nano:
                     let expectedResult = "nano_39gsbcishxn3n7wd17ono4otq5wazwzusqgqigztx73wbrh5jwbdbshfnumc"
                     AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
+                case .nebulas:
+                    let expectedResult = "n1ZVgEidtdseYv9ogmGz69Cz4mbqmHYSNqJ"
+                    AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
                 case .neo:
                     let expectedResult = "AUa3rzbGJe7MbHf8Kra9em8oaLBL1MDYKF"
                     AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
@@ -123,9 +129,6 @@ class CoinAddressDerivationTests: XCTestCase {
                     AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
                 case .groestlcoin:
                     let expectedResult = "grs1qexwmshts5pdpeqglkl39zyl6693tmfwp0cue4j"
-                    AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
-                case .iocoin:
-                    let expectedResult = "ieCTzUZhc8a5T8Y8suosPw7eMgTtN5PE1H"
                     AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
                 case .iost:
                     let expectedResult = "EKRQPgX7nKt8hJABwm9m3BKWGj7kcSECkJnCBauHQWin"
@@ -168,6 +171,18 @@ class CoinAddressDerivationTests: XCTestCase {
                     AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
                 case .ark:
                     let expectedResult = "Ac49m5pu5YpMMNgEbSYeZUEpRMHcSK3DfV"
+                    AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
+                case .ravencoin:
+                    let expectedResult = "RHoCwPc2FCQqwToYnSiAb3SrCET4zEHsbS"
+                    AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
+                case .waves:
+                    let expectedResult = "3P63vkaHhyE9pPv9EfsjwGKqmZYcCRHys4n"
+                    AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
+                case .aeternity:
+                    let expectedResult = "ak_QDHJSfvHG9sDHBobaWt2TAGhuhipYjEqZEH34bWugpJfJc3GN"
+                    AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
+                case .terra:
+                    let expectedResult = "terra1rh402g98t7sly8trzqw5cyracntlep6qe3smug"
                     AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
                 }
             }
